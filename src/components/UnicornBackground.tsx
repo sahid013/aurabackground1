@@ -51,11 +51,16 @@ export function UnicornBackground() {
     }, []);
 
     return (
-        <div className="aura-background-component absolute top-0 left-0 w-full h-full -z-10 bg-black overflow-hidden">
+        <div className="aura-background-component fixed inset-0 -z-10 bg-white overflow-hidden pointer-events-none">
             <div
                 data-us-project="FixNvEwvWwbu3QX9qC3F"
                 className="absolute w-full h-full left-0 top-0"
-                style={{ opacity: 1 }}
+                style={{
+                    opacity: 1,
+                    // Filter to approximate #4499E3 (Blue)
+                    // Increased saturation and contrast for "deeper" look
+                    filter: "sepia(100%) hue-rotate(180deg) saturate(400%) brightness(95%) contrast(110%)"
+                }}
             ></div>
         </div>
     );
